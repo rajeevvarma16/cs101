@@ -1,16 +1,23 @@
 def symmetric(p):
     n = len(p)
     i = 0
-    while i < n:
-        j = 0
-        while j < n:
-            print p[i][j]
-            print p[j][i]
-            if p[i][j] != p[j][i]:
-                return False
-            j = j+ 1
-        i = i + 1
-    return True
+    if n == 0:
+        return True
+    if n == 1 and len(p[0])==1:
+        return True
+    if n == 1 and len(p[0])!=1:
+        return False
+    if n > 1:
+        while i < n:
+            j = 0
+            while j < n:
+                if p[i][j] != p[j][i]:
+                    return False
+                j = j+ 1
+            i = i + 1
+        return True
+    else:
+        return False
     
     # Your code here
 
